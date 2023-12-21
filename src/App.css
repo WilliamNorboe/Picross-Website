@@ -18,10 +18,14 @@
   height: 50px;
 }
 .row{
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
 }
 
 .marked{
- background-color: aqua; 
+ background-color: black; 
+}
+
+.numbers{
+  position: absolute;
 }

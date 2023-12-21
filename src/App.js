@@ -1,6 +1,10 @@
 import './App.css';
 import { useState } from 'react';
 
+
+// let columnHint =  (picrossAnswer)=>{
+
+// }
 let createBoard = (size)=>{
   let picrossBoard = [];
   let playerBoard = [];
@@ -59,17 +63,24 @@ function App() {
   let row = [];
   // const [board, setBoard] = useState([]);
   // const [row, setRow] = useState([]);
+  board.push(
+  <tr>
+
+  </tr>)
   for (let i = 0; i < playerBoard.length; i++) {
     row = []
     for (let j = 0; j < playerBoard[i].length; j++) {
       if(playerBoard[i][j] == 1){
-        row.push(<div className= 'box marked' key = {j} onClick = {()=>{boxClicked(i, j, playerBoard , setPlayerBoard)}} >{playerBoard[i][j]}</div>);
+        row.push(<td className= 'box marked' key = {j} onClick = {()=>{boxClicked(i, j, playerBoard , setPlayerBoard)}} >{playerBoard[i][j]}</td>);
       }
       else{
-        row.push(<div className= 'box' key = {j} onClick = {()=>{boxClicked(i, j, playerBoard , setPlayerBoard)}}>{playerBoard[i][j]}</div>);
+        row.push(<td className= 'box' key = {j} onClick = {()=>{boxClicked(i, j, playerBoard , setPlayerBoard)}}>{playerBoard[i][j]}</td>);
+      }
+      if( i == size-1 && j == size-1){
+        // row.push(<div className  = "numbers">3 3</div>)
       }
     }
-    board.push(<div className='row' key = {i}>{row}</div>);
+    board.push(<tr className='row' key = {i}>{row}</tr>);
   }
   
   return (
@@ -77,10 +88,14 @@ function App() {
       <div className='page'>
         <h1>Picross</h1>
         <button onClick = {()=>{changeSize(setSize, setPlayerBoard)}} >Change Size</button>
+        {/* {board} */}
+        <table>
+        <tbody>
         {board}
+        </tbody>
+      </table>
         <button onClick = {()=>{printb(playerBoard, picrossAnswer)}} >Check</button>
       </div>
-      
     </div>
   );
 }
