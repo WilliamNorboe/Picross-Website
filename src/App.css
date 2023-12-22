@@ -29,3 +29,19 @@
 .numbers{
   position: absolute;
 }
+
+/* selection  */
+
+.choices{
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+}
+
+.cross{
+  background-color: burlywood;
+}
+
+.selected{
+  border: 4px dotted blue;
+}
