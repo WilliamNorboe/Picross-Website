@@ -21,8 +21,8 @@ function Win(props) {
   return (
       <div className='page'>
         <h1>Picross</h1>
-        <button >Restart</button>
-        <button class="btn-2" onClick = {()=>{window.location.reload();}}><span>Button</span></button>
+        <p>Good Job! You did it!</p>
+        <button class="btn-2" onClick = {()=>{window.location.reload();}}><span>Restart</span></button>
           {board}
       </div>
   );
