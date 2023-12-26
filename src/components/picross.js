@@ -145,8 +145,8 @@ function Picross(props) {
   let test2 = rowHint(picrossAnswer, size);
   // console.log(test);
   board.push(
-  <tr key = {size+8}>
-    <td></td>
+  <tr key = {-1}>
+    <td key = {-2}></td>
     {test}
   </tr>)
   for (let i = 0; i < playerBoard.length; i++) {
@@ -168,17 +168,17 @@ function Picross(props) {
   return (
       <div className='page'>
         <h1>Picross</h1>
-        <button class="btn-2" onClick = {()=>{changeSize(setSize, setPlayerBoard)}}><span>Change Size</span></button>
+        <button className="btn-2" onClick = {()=>{changeSize(setSize, setPlayerBoard)}}><span>Change Size</span></button>
         <div className = "choices">
-          <div className='box marked' onClick= {()=>{choice = "black"}}></div>
-          <div className='box cross' onClick= {()=>{choice = "not"}}></div>
+          <div className='box marked' key = {1} onClick= {()=>{choice = "black"}}></div>
+          <div className='box cross' key = {2} onClick= {()=>{choice = "not"}}></div>
         </div>
         <table>
           <tbody>
           {board}
           </tbody>
       </table>
-        <button class="btn-2" onClick = {()=>{props.finished(printb(playerBoard, picrossAnswer, props.setResult))}}><span>Button</span></button>
+        <button className="btn-2" onClick = {()=>{props.finished(printb(playerBoard, picrossAnswer, props.setResult))}}><span>Button</span></button>
       </div>
   );
 }
