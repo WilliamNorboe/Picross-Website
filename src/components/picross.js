@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import './button.css';
 
 let prevSize = 0;
 let picrossAnswer;
@@ -167,7 +168,7 @@ function Picross(props) {
   return (
       <div className='page'>
         <h1>Picross</h1>
-        <button onClick = {()=>{changeSize(setSize, setPlayerBoard)}} >Change Size</button>
+        <button class="btn-2" onClick = {()=>{changeSize(setSize, setPlayerBoard)}}><span>Change Size</span></button>
         <div className = "choices">
           <div className='box marked' onClick= {()=>{choice = "black"}}></div>
           <div className='box cross' onClick= {()=>{choice = "not"}}></div>
@@ -177,7 +178,7 @@ function Picross(props) {
           {board}
           </tbody>
       </table>
-        <button onClick = {()=>{props.finished(printb(playerBoard, picrossAnswer, props.setResult))}} >Check</button>
+        <button class="btn-2" onClick = {()=>{props.finished(printb(playerBoard, picrossAnswer, props.setResult))}}><span>Button</span></button>
       </div>
   );
 }

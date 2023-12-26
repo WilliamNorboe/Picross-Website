@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-
+import './button.css';
 
 function Win(props) {
   console.log(props.playerBoard);
@@ -21,7 +21,8 @@ function Win(props) {
   return (
       <div className='page'>
         <h1>Picross</h1>
-        <button onClick = {()=>{window.location.reload();}}>Restart</button>
+        <button >Restart</button>
+        <button class="btn-2" onClick = {()=>{window.location.reload();}}><span>Button</span></button>
           {board}
       </div>
   );
