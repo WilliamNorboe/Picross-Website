@@ -4,7 +4,7 @@ import './button.css';
 
 let run = true;
 function Win(props) {
-  console.log(props.playerBoard);
+  // console.log(props.playerBoard);
   let board = [];
   let row = [];
   if(run){

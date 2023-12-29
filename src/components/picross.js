@@ -93,7 +93,6 @@ let changeSize = (setSize, setPlayerBoard) =>{
 }
 
 let boxClicked = (i, j, board, setBoard) =>{
-  console.log(i + " " + j);
   let t = structuredClone(board);
   if(t[i][j] == 0){
     if(choice == "not"){
@@ -119,7 +118,6 @@ let printb = (b1, b2, setResult) =>{
         continue;
       }
       if(b1[i][j] != b2[i][j]){
-        console.log("no")
         return false;
       }
     }
@@ -131,6 +129,7 @@ let printb = (b1, b2, setResult) =>{
 function Picross(props) {
   const [size, setSize] = useState(5);
   const [playerBoard, setPlayerBoard] = useState(createEmptyBoard(size));
+  const [marked, setMarked] = useState(false);
   let board = [];
   let row = [];
   // const [board, setBoard] = useState([]);
@@ -165,20 +164,34 @@ function Picross(props) {
     board.push(<tr className='row' key = {i}>{row}</tr>);
   }
   
+  let mark;
+  let blank;
+
+  if(marked){
+    mark = <div className='box marked' key = {1} onClick= {()=>{choice = "black"; setMarked(false);}}></div>;
+    blank = <div className='box cross selected' key = {2} onClick= {()=>{choice = "not"; setMarked(true);}}></div>
+  }
+  else{
+    mark = <div className='box marked selected' key = {1} onClick= {()=>{choice = "black"; setMarked(false);}}></div>;
+    blank = <div className='box cross' key = {2} onClick= {()=>{choice = "not"; setMarked(true);}}></div>
+  }
+  
   return (
       <div className='page'>
         <h1>Picross</h1>
         <button className="btn-2" onClick = {()=>{changeSize(setSize, setPlayerBoard)}}><span>Change Size</span></button>
         <div className = "choices">
-          <div className='box marked' key = {1} onClick= {()=>{choice = "black"}}></div>
-          <div className='box cross' key = {2} onClick= {()=>{choice = "not"}}></div>
+          <p>Mark:</p>
+          {mark}
+          <p>Blank:</p>
+          {blank}
         </div>
         <table>
           <tbody>
           {board}
           </tbody>
       </table>
-        <button className="btn-2" onClick = {()=>{props.finished(printb(playerBoard, picrossAnswer, props.setResult))}}><span>Button</span></button>
+        <button className="btn-2" onClick = {()=>{props.finished(printb(playerBoard, picrossAnswer, props.setResult))}}><span>Check</span></button>
       </div>
   );
 }
