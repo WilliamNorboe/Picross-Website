@@ -60,11 +60,11 @@ let rowHint =  (picrossAnswer, size)=>{
 // create board functions
 let createBoard = (size)=>{
   if(size == prevSize){
-    return
+    return;
   }
   let picrossBoard = [];
   for(let i = 0; i < size; ++i){
-    let row = []
+    let row = [];
     for(let j = 0; j < size; ++j){
       row.push(Math.floor(Math.random()*2));
     }
@@ -109,7 +109,7 @@ let boxClicked = (i, j, board, setBoard) =>{
   setBoard(t);
 }
 
-let printb = (b1, b2, setResult) =>{
+let printb = (b1, b2, board, setResult) =>{
   // console.log(b1);
   // console.log(b2);
   for(let i = 0; i < b1.length; ++i){
@@ -122,7 +122,7 @@ let printb = (b1, b2, setResult) =>{
       }
     }
   }
-  setResult(b2);
+  setResult(board);
   return true;
 }
 
@@ -191,7 +191,7 @@ function Picross(props) {
           {board}
           </tbody>
       </table>
-        <button className="btn-2" onClick = {()=>{props.finished(printb(playerBoard, picrossAnswer, props.setResult))}}><span>Check</span></button>
+        <button className="btn-2" onClick = {()=>{props.finished(printb(playerBoard, picrossAnswer, board, props.setResult))}}><span>Check</span></button>
       </div>
   );
 }

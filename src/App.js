@@ -6,6 +6,7 @@ import Win from './components/win';
 function App() {
   const [finished, setFinished] = useState(false);
   const [playerBoard, setPlayerBoard] = useState(false);
+
   
   return (
     <div className="App">
