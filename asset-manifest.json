@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Picross-Website/static/css/main.f201f5d1.css",
-    "main.js": "/Picross-Website/static/js/main.e69e5625.js",
+    "main.js": "/Picross-Website/static/js/main.5f407168.js",
     "static/js/787.185cdc47.chunk.js": "/Picross-Website/static/js/787.185cdc47.chunk.js",
     "index.html": "/Picross-Website/index.html",
     "main.f201f5d1.css.map": "/Picross-Website/static/css/main.f201f5d1.css.map",
-    "main.e69e5625.js.map": "/Picross-Website/static/js/main.e69e5625.js.map",
+    "main.5f407168.js.map": "/Picross-Website/static/js/main.5f407168.js.map",
     "787.185cdc47.chunk.js.map": "/Picross-Website/static/js/787.185cdc47.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f201f5d1.css",
-    "static/js/main.e69e5625.js"
+    "static/js/main.5f407168.js"
   ]
 }
